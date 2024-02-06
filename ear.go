@@ -34,7 +34,7 @@ type AttestationResult struct {
 
 type AttestationResultExtensions struct {
 	VeraisonTeeInfo *VeraisonTeeInfo `json:"ear.veraison.tee-info,omitempty"`
-	NAETSSInfo      *NAETSSInfo      `json:"ear.nae.tts-info,omitempty"`
+	NAETSSInfo      *NAETTSInfo      `json:"ear.nae.tts-info,omitempty"`
 }
 
 // B64Url is base64url (§5 of RFC4648) without padding.
@@ -260,6 +260,9 @@ func (o *AttestationResult) populateFromMap(m map[string]interface{}) error {
 		},
 		"ear.veraison.tee-info": func(v interface{}) (interface{}, error) {
 			return ToVeraisonTeeInfo(v)
+		},
+		"ear.nae.tts-info": func(v interface{}) (interface{}, error) {
+			return ToNAETTSInfo(v)
 		},
 	}
 
