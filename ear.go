@@ -34,7 +34,7 @@ type AttestationResult struct {
 
 type AttestationResultExtensions struct {
 	VeraisonTeeInfo *VeraisonTeeInfo `json:"ear.veraison.tee-info,omitempty"`
-	NAETSSInfo      *NAETTSInfo      `json:"ear.nae.tts-info,omitempty"`
+	NAETTSInfo      *NAETTSInfo      `json:"ear.nae.tts-info,omitempty"`
 }
 
 // B64Url is base64url (§5 of RFC4648) without padding.
